@@ -1,0 +1,33 @@
+spring:
+  thymeleaf:
+    check-template-location: false
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: 5672
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PW:guest}
+  mail:
+    host: smtp.gmail.com
+    username: jjohn999118@gmail.com
+    password: ${PASSWORD}
+    port: 465
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+        debug: true
+    default-encoding: UTF-8
+    test-connection: false
+server:
+  port: 6100
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
