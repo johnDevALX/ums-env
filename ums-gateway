@@ -1,0 +1,33 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ums-auth-service
+          uri: lb://ums-auth-service
+          predicates:
+            - Path=/auth/**
+        - id: ums-mail-service
+          uri: lb://UMS-MAIL-SERVICE
+          predicates:
+            - Path=/email/**
