@@ -31,8 +31,3 @@ spring:
           uri: lb://UMS-MAIL-SERVICE
           predicates:
             - Path=/email/**
-        - id: ums-staff
-          url: lb://ums-staff
-          predicates:
-            - Path=/staff/**
-            - Path=/department/**
