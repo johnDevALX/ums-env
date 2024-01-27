@@ -10,7 +10,7 @@ spring:
     show-sql: true
 
 server:
-  port: 0
+  port: 0001
 eureka:
   client:
     fetch-registry: true
