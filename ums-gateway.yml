@@ -27,7 +27,7 @@ spring:
           uri: lb://ums-auth-service
           predicates:
             - Path=/auth/**
-        - id: ums-staff
-          url: lb://ums-staff
+        - id: ums
+          url: lb://ums
           predicates:
             - Path=/staff/**
