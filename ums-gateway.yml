@@ -35,4 +35,3 @@ spring:
           url: lb://ums-staff
           predicates:
             - Path=/staff/**
-            - Path=/department/**
